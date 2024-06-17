@@ -7,3 +7,15 @@ export const getArticles = () => {
         return response.data.articles;
     })
 }
+
+export const getArticleById = (article_id) => {
+    return app.get(`articles/${article_id}`).then((response) => {
+        return response.data.article
+    })
+}
+
+export const getCommentsByArticleId = (article_id) => {
+    return app.get(`articles/${article_id}/comments`).then((response) => {
+        return response.data.comments
+    })
+}

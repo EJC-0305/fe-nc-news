@@ -2,6 +2,7 @@ import './App.css'
 import Header from './components/Header'
 import { Route, Routes } from 'react-router-dom'
 import Articles from './components/Articles'
+import Article from './components/Article'
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Articles />}></Route>
+        <Route path="/:article_id" element={<Article />}></Route>
       </Routes>
     </>
   )

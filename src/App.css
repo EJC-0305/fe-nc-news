@@ -41,6 +41,11 @@
   color: #888;
 } */
 
+* {
+  text-decoration: none;
+  color: black;
+}
+
 li {
   border: 2px solid red;
   margin: 2rem;

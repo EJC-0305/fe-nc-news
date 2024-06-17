@@ -15,9 +15,10 @@ function Articles() {
         <ul>
             {articles.map((article) => {
                 return <li key={article.article_id}>
-                    <img src={article.article_img_url}></img>
-                    <h2>{article.title}</h2>
-                    <Link to={`/${article.article_id}`}>Read more...</Link>
+                    <Link to={`/${article.article_id}`}>
+                        <img src={article.article_img_url}></img>
+                        <h2>{article.title}</h2>
+                    </Link>
                 </li>
             })}
         </ul>

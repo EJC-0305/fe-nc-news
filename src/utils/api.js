@@ -25,3 +25,9 @@ export const voteOnArticle = (article_id, vote) => {
         return response.data.article;
     })
 }
+
+export const postNewComment = (article_id, username, body) => {
+    return app.post(`articles/${article_id}/comments`, {username: username, body: body}).then((response) => {
+        return response.data.new_comment;
+    })
+}

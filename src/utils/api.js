@@ -19,3 +19,9 @@ export const getCommentsByArticleId = (article_id) => {
         return response.data.comments
     })
 }
+
+export const voteOnArticle = (article_id, vote) => {
+    return app.patch(`articles/${article_id}`, {inc_votes: vote}).then((response) => {
+        return response.data.article;
+    })
+}

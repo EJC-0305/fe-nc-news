@@ -1,4 +1,5 @@
 function Comment({comment}) {
+    //console.log(comment);
 
     const date = new Date(comment.created_at);
     const parsedDate = date.toDateString();

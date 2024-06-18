@@ -92,3 +92,7 @@ article {
   margin-left: 15%;
   margin-right: 15%;
 }
+
+.disabled {
+  background-color: rgb(42, 161, 165);
+}

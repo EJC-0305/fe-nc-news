@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { getArticleById } from "../utils/api";
 import { useEffect, useState } from "react";
 import ArticleComments from "./ArticleComments";
+import Vote from "./Vote";
 
 function Article() {
     const {article_id} = useParams();
@@ -22,7 +23,7 @@ function Article() {
         <p className="article-element">published on {parsedDate}</p>
         <img src={article.article_img_url} className="articleImg"></img>
         <p className="article-element">{article.body}</p>
-        <p className="article-element">Article rating: {article.votes}</p>
+        <Vote article={article}/>
         <ArticleComments article_id={article_id}/>
     </article>
 }

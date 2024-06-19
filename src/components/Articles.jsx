@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 import { getArticles } from "../utils/api";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 function Articles() {
     const [articles, setArticles] = useState([])
+    let { topic } = useParams()
 
     useEffect(() => {
-        getArticles().then((articles) => {
+        getArticles(topic).then((articles) => {
             setArticles(articles)
         })
-    }, [])
+    }, [topic])
 
     return <section>
         <ul>

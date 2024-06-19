@@ -31,3 +31,7 @@ export const postNewComment = (article_id, username, body) => {
         return response.data.new_comment;
     })
 }
+
+export const deleteComment = (comment_id) => {
+    return app.delete(`comments/${comment_id}`)
+}

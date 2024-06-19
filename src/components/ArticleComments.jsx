@@ -10,10 +10,10 @@ function ArticleComments({article_id}) {
         getCommentsByArticleId(article_id).then((comments) => {
             setComments(comments);
         })
-    }, [comments])
+    }, [])
 
     return <section className="article-element">
-        <AddNewComment article_id={article_id}/>
+        <AddNewComment article_id={article_id} setComments={setComments} comments={comments}/>
         <ul>
             {comments.map((comment) => {
                 return <Comment key={comment.comment_id} comment={comment}/>

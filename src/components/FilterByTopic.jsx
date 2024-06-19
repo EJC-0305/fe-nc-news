@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getTopics } from "../utils/api";
 import { Link } from "react-router-dom";
+import { formatTopic } from "../utils/utilFuncs";
 
 function FilterByTopic() {
 
@@ -13,9 +14,10 @@ function FilterByTopic() {
     }, [])
     
     return<nav>
-        <Link to='/'>all</Link>
+        <Link to='/'>All</Link>
         {topics.map((topic) => {
-            return <Link key={topic.slug} to={`/${topic.slug}`} >{topic.slug}</Link>
+            const formattedTopic = formatTopic(topic.slug)
+            return <Link key={topic.slug} to={`/${topic.slug}`} >{formattedTopic}</Link>
         })}
     </nav>
 }

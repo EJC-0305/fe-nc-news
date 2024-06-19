@@ -34,7 +34,7 @@ function AddNewComment({article_id, setComments, comments}) {
         })
     }
 
-    return <form onSubmit={handleSubmit}>
+    return <form onSubmit={handleSubmit} className="newComment">
         <label>Share your views on this article:
             <TextField id="comment-input" variant="outlined" value={commentInput} onChange={handleChange} fullWidth required multiline/>
         </label>

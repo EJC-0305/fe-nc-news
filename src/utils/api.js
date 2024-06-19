@@ -2,8 +2,8 @@ import axios from "axios";
 
 const app = axios.create({ baseURL: 'https://nc-news-back-end-project-oqj5.onrender.com/api'})
 
-export const getArticles = () => {
-    return app.get('/articles').then((response) => {
+export const getArticles = (topic) => {
+    return app.get('/articles', {params: {topic}}).then((response) => {
         return response.data.articles;
     })
 }
@@ -34,4 +34,10 @@ export const postNewComment = (article_id, username, body) => {
 
 export const deleteComment = (comment_id) => {
     return app.delete(`comments/${comment_id}`)
+}
+
+export const getTopics = () => {
+    return app.get('/topics').then((response) => {
+        return response.data.topics
+    })
 }

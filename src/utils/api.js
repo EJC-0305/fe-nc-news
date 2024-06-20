@@ -2,8 +2,8 @@ import axios from "axios";
 
 const app = axios.create({ baseURL: 'https://nc-news-back-end-project-oqj5.onrender.com/api'})
 
-export const getArticles = (topic) => {
-    return app.get('/articles', {params: {topic}}).then((response) => {
+export const getArticles = (topic, orderBy, sort_by) => {
+    return app.get('/articles', {params: {topic, order_by: orderBy, sort_by}}).then((response) => {
         return response.data.articles;
     })
 }

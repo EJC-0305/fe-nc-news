@@ -3,10 +3,12 @@ import { getArticles } from "../utils/api";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import { formatTopic } from "../utils/utilFuncs";
 import SortBy from "./SortBy";
+import Error from "./Error.jsx"
 
 function Articles() {
     const [articles, setArticles] = useState([])
     let { topic } = useParams()
+    const [error, setError] = useState()
 
     const [searchParams, setSearchParams] = useSearchParams();
     const orderBy = searchParams.get('orderBy');
@@ -15,12 +17,15 @@ function Articles() {
     useEffect(() => {
         getArticles(topic, orderBy, sort_by).then((articles) => {
             setArticles(articles)
+        }).catch((err) => {
+            setError(err)
         })
     }, [topic, sort_by, orderBy])
 
     let formattedTopic;
     if(topic) formattedTopic = formatTopic(topic);
 
+    if(error) return <Error error={error} setError={setError}/>
     return <section className="articles-section">
         <div className="topicsort">
             {topic ? <h2>{formattedTopic} Articles</h2> : <h2>All Articles</h2>}

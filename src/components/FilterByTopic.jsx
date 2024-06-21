@@ -17,7 +17,7 @@ function FilterByTopic() {
         <Link to='/'>All</Link>
         {topics.map((topic) => {
             const formattedTopic = formatTopic(topic.slug)
-            return <Link key={topic.slug} to={`/${topic.slug}`} >{formattedTopic}</Link>
+            return <Link key={topic.slug} to={`/topics/${topic.slug}`} >{formattedTopic}</Link>
         })}
     </nav>
 }

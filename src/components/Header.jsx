@@ -3,7 +3,7 @@ import FilterByTopic from "./FilterByTopic";
 
 function Header() {
     return <header>
-        <Link to="/">
+        <Link className="websiteName" to="/">
             <h1>NC News</h1>
         </Link>
         <FilterByTopic />

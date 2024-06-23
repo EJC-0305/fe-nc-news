@@ -43,12 +43,12 @@ function AddNewComment({article_id, setComments, comments}) {
 
     return <form onSubmit={handleSubmit} className="newComment">
         <label>Share your views on this article:
-            <TextField id="comment-input" variant="outlined" value={commentInput} onChange={handleChange} fullWidth multiline/>
+            <TextField error = {validationMsg === 'Your comment cannot be empty' ? true : false} id="comment-input" variant="outlined" value={commentInput} onChange={handleChange} fullWidth multiline/>
             
         </label>
         <br></br>
         {validationMsg ? <p className="validation">{validationMsg}</p> : <p>{postCommentMsg}</p>}
-        <button className="submit" disabled={tempDisableButton}>Submit</button>
+        <button className={tempDisableButton ? "disabled-submit" : "submit"} disabled={tempDisableButton}>Submit</button>
     </form>
 }
 

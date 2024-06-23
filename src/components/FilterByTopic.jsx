@@ -14,10 +14,10 @@ function FilterByTopic() {
     }, [])
     
     return<nav>
-        <Link to='/'>All</Link>
+        <Link className="topic" to='/'>All</Link>
         {topics.map((topic) => {
             const formattedTopic = formatTopic(topic.slug)
-            return <Link key={topic.slug} to={`/topics/${topic.slug}`} >{formattedTopic}</Link>
+            return <Link className="topic" key={topic.slug} to={`/topics/${topic.slug}`} >{formattedTopic}</Link>
         })}
     </nav>
 }

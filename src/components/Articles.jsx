@@ -28,7 +28,7 @@ function Articles() {
     if(error) return <Error error={error} setError={setError}/>
     return <section className="articles-section">
         <div className="topicsort">
-            {topic ? <h2>{formattedTopic} Articles</h2> : <h2>All Articles</h2>}
+            {topic ? <h2 className="currentTopic">{formattedTopic} Articles</h2> : <h2 className="currentTopic">All Articles</h2>}
             <SortBy topic={topic} searchParams={searchParams} setSearchParams={setSearchParams}/>
         </div>
         
